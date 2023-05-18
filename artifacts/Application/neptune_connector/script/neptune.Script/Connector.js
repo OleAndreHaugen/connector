@@ -60,9 +60,9 @@ function Connector(id) {
         // Pagination - Auto - After
         if (this.paginationSetup.enabled) {
             paginationHandle(response, this.paginationSetup);
-        } else {
-            return response;
         }
+        
+        return response;
     };
 
     this.get = async function (options) {
@@ -94,7 +94,7 @@ function Connector(id) {
         const keys = Object.keys(options.data);
 
         keys.forEach(function (key) {
-           data[key] = options.data[key]
+            data[key] = options.data[key];
         });
 
         return await ajax("Save", data, this.id);
