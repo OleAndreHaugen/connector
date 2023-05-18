@@ -9,7 +9,14 @@
 	"description": "Use Adaptive Framework Connectors in App Designer",
 	"ver": "23.5.18.612",
 	"enableCICD": true,
-	"apps": [],
+	"apps": [
+		{
+			"id": "f18c3099-323b-4942-9225-2227d2f35739",
+			"application": "neptune_connector",
+			"title": "Use Adaptive Framework Connectors in App Designer",
+			"description": "Use Adaptive Framework Connectors in App Designer"
+		}
+	],
 	"api": [],
 	"odataSource": [],
 	"odataMock": [],
@@ -36,7 +43,13 @@
 	"connector": [],
 	"events": [],
 	"media_library": [],
-	"code_snippets": [],
+	"code_snippets": [
+		{
+			"id": "8297d135-b5b0-40ad-88be-d6cad206c4ad",
+			"name": "Documentation",
+			"description": "Documentation on how to use Connectors in App Designer"
+		}
+	],
 	"wf_determination": [],
 	"wf_taskaction": []
 }
