@@ -7,14 +7,17 @@
 	},
 	"name": "neptunesoftware-connector",
 	"description": "Use Adaptive Framework Connectors in App Designer",
-	"ver": "23.5.18.612",
+	"ver": "23.9.22.161",
 	"enableCICD": true,
 	"apps": [
 		{
 			"id": "f18c3099-323b-4942-9225-2227d2f35739",
 			"application": "neptune_connector",
 			"title": "Use Adaptive Framework Connectors in App Designer",
-			"description": "Use Adaptive Framework Connectors in App Designer"
+			"description": "Use Adaptive Framework Connectors in App Designer",
+			"package": {
+				"id": "46be87f1-c9d6-458e-b537-3bea09c359b2"
+			}
 		}
 	],
 	"api": [],
@@ -42,7 +45,6 @@
 	"wf_definition": [],
 	"connector": [],
 	"events": [],
-	"media_library": [],
 	"code_snippets": [
 		{
 			"id": "8297d135-b5b0-40ad-88be-d6cad206c4ad",

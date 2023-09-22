@@ -61,7 +61,7 @@ function Connector(id) {
         if (this.paginationSetup.enabled) {
             paginationHandle(response, this.paginationSetup);
         }
-        
+
         return response;
     };
 
@@ -360,7 +360,7 @@ function Connector(id) {
                 formattedField.valueLookup = {
                     table: field.lookupTable,
                     textField: field.lookupText,
-                    keyField: [{ fieldName: field.name, key: field.lookupKey }],
+                    keyField: [{ fieldName: field.lookupKey, key: field.name }],
                     hideKey: true,
                 };
             }
