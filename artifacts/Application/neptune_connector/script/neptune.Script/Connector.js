@@ -85,6 +85,7 @@ function Connector(id) {
 
     this.save = async function (options) {
         let data = {
+            id: this.id,
             settings: {
                 fieldsSel: [],
             },
@@ -135,7 +136,7 @@ function Connector(id) {
         const toolPagination = new sap.m.Toolbar({
             width: "100%",
             design: "Transparent",
-        }).addStyleClass("sapUiSizeCompact ");
+        }).addStyleClass("sapUiSizeCompact connectorToolbar");
 
         toolPagination.addContent(
             new sap.m.Text({
@@ -354,13 +355,35 @@ function Connector(id) {
                 name: field.name,
             };
 
-            // Lookup
+            // Lookup - Value
             if (field.lookupTable && field.lookupKey && field.lookupText) {
                 formattedField.valueType = "Lookup";
                 formattedField.valueLookup = {
                     table: field.lookupTable,
                     textField: field.lookupText,
                     keyField: [{ fieldName: field.lookupKey, key: field.name }],
+                    hideKey: true,
+                };
+            }
+
+            // Lookup - NumberState
+            if (field.lookupNumberStateTable && field.lookupNumberStateKey && field.lookupNumberStateText) {
+                formattedField.numberStateType = "Lookup";
+                formattedField.numberStateLookup = {
+                    table: field.lookupNumberStateTable,
+                    textField: field.lookupNumberStateText,
+                    keyField: [{ fieldName: field.lookupNumberStateKey, key: field.name }],
+                    hideKey: true,
+                };
+            }
+
+            // Lookup - NumberUnit
+            if (field.lookupNumberUnitTable && field.lookupNumberUnitKey && field.lookupNumberUnitText) {
+                formattedField.numberUnitType = "Lookup";
+                formattedField.numberUnitLookup = {
+                    table: field.lookupNumberUnitTable,
+                    textField: field.lookupNumberUnitText,
+                    keyField: [{ fieldName: field.lookupNumberUnitKey, key: field.name }],
                     hideKey: true,
                 };
             }
