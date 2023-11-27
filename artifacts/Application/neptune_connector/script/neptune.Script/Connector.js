@@ -234,7 +234,11 @@ function Connector(id) {
 
         toolPagination.addContent(toolPaginationTitle);
 
-        this.paginationSetup.table.setInfoToolbar(toolPagination);
+        if (options.parent) {
+            options.parent[options.aggregation](toolPagination);
+        } else {
+            this.paginationSetup.table.setInfoToolbar(toolPagination);
+        }
     };
 
     this.enableColumnSorting = function (options) {
@@ -384,6 +388,39 @@ function Connector(id) {
                     table: field.lookupNumberUnitTable,
                     textField: field.lookupNumberUnitText,
                     keyField: [{ fieldName: field.lookupNumberUnitKey, key: field.name }],
+                    hideKey: true,
+                };
+            }
+
+            // Lookup - StatusIcon
+            if (field.lookupStatusIconTable && field.lookupStatusIconKey && field.lookupStatusIconText) {
+                formattedField.statusIconType = "Lookup";
+                formattedField.statusIconLookup = {
+                    table: field.lookupStatusIconTable,
+                    textField: field.lookupStatusIconText,
+                    keyField: [{ fieldName: field.lookupStatusIconKey, key: field.name }],
+                    hideKey: true,
+                };
+            }
+
+            // Lookup - StatusState
+            if (field.lookupStatusStateTable && field.lookupStatusStateKey && field.lookupStatusStateText) {
+                formattedField.statusStateType = "Lookup";
+                formattedField.statusStateLookup = {
+                    table: field.lookupStatusStateTable,
+                    textField: field.lookupStatusStateText,
+                    keyField: [{ fieldName: field.lookupStatusStateKey, key: field.name }],
+                    hideKey: true,
+                };
+            }
+
+            // Lookup - StatusTitle
+            if (field.lookupStatusTitleTable && field.lookupStatusTitleKey && field.lookupStatusTitleText) {
+                formattedField.statusTitleType = "Lookup";
+                formattedField.statusTitleLookup = {
+                    table: field.lookupStatuTitleTable,
+                    textField: field.lookupStatusTitleText,
+                    keyField: [{ fieldName: field.lookupStatusTitleKey, key: field.name }],
                     hideKey: true,
                 };
             }
